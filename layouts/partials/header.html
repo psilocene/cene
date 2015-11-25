@@ -52,6 +52,9 @@
 					{{range $key, $element := .Site.Params.links}}
 						<li><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
+          {{range $key, $element := .Site.Params.links.external}}
+						<li><a href="{{ $element }}">{{lower (title $key) }} </a></li>
+					{{ end }}
           <li><h3>portal</h3></li>
           {{range $key, $element := .Site.Params.resources}}
 						<li><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
