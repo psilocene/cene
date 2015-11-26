@@ -50,7 +50,7 @@
         <ul class="sidebar-nav">
 					<img src="{{ .Site.Params.ProfilePicture }}" />
           <li class="sidebar-brand"><a href="{{ .Site.BaseURL }}/"><h1 class="brand">{{ .Site.Title }}</h1></a><h3>{{ .Site.Params.Description }}</h3></li>
-          <li><h4 class="section-link"><a href="{{ $baseUrl}}foundation">foundation</a></h4></li>
+          <li><h4 class="section-link"><a href="{{ $baseUrl}}/foundation/">foundation</a></h4></li>
           {{range $key, $element := .Site.Params.links}}
 						<li class="link-indent"><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
@@ -58,7 +58,7 @@
 						<li class="link-indent"><a href="{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
           <li><h4 class="section-link"><a href="{{ .Site.Params.external.forum}}">forum</a></h4></li>
-          <li><h4 class="section-link"><a href="{{ $baseUrl}}registry">registry</a></h4></li>
+          <li><h4 class="section-link"><a href="{{ $baseUrl}}/registry/">registry</a></h4></li>
           {{range $key, $element := .Site.Params.registry}}
 						<li class="link-indent"><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
