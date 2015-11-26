@@ -55,9 +55,9 @@
           {{range $key, $element := .Site.Params.external}}
 						<li><a href="{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
-          <li><a href="{{ $baseUrl }}{{ $element }}"><h3>registry</h3></a></li>
+          <li><h3><a href="{{ $baseUrl}}registry">registry</a></h3></li>
           {{range $key, $element := .Site.Params.resources}}
-						<li><h3><a href="{{ $baseUrl}}registry">registry</a></h3></li>
+						<li><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
           <div id="social-wrapper">
            {{ with .Site.Params.twitter }}<li> <a href="{{.}}"><i class="fa fa-twitter-square"></i> @twitter</a></li>{{end}}
