@@ -49,26 +49,31 @@
         <ul class="sidebar-nav">
 					<img src="{{ .Site.Params.ProfilePicture }}" />
           <li class="sidebar-brand"><a href="{{ .Site.BaseURL }}/"><h1 class="brand">{{ .Site.Title }}</h1></a><h3>{{ .Site.Params.Description }}</h3></li>
-					{{range $key, $element := .Site.Params.links}}
-						<li><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
+          <li><h4 class="section-link"><a href="{{ $baseUrl}}foundation">foundation</a></h4></li>
+          {{range $key, $element := .Site.Params.links}}
+						<li class="link-indent"><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
           {{range $key, $element := .Site.Params.external}}
-						<li><a href="{{ $element }}">{{lower (title $key) }} </a></li>
+						<li class="link-indent"><a href="{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
-          <li><h3><a href="{{ $baseUrl}}registry">registry</a></h3></li>
-          {{range $key, $element := .Site.Params.resources}}
-						<li><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
+          <li><h4 class="section-link"><a href="{{ .Site.Params.external.forum}}">forum</a></h4></li>
+          <li><h4 class="section-link"><a href="{{ $baseUrl}}registry">registry</a></h4></li>
+          {{range $key, $element := .Site.Params.registry}}
+						<li class="link-indent"><a href="{{ $baseUrl }}{{ $element }}">{{lower (title $key) }} </a></li>
 					{{ end }}
           <div id="social-wrapper">
            {{ with .Site.Params.twitter }}<li> <a href="{{.}}"><i class="fa fa-twitter-square"></i> @twitter</a></li>{{end}}
            {{ with .Site.Params.linkedin }}<li> <a href="{{ . }}"><i class="fa fa-linkedin-square"></i> linkedin</a> </li>{{end}}
            {{ with .Site.Params.facebook }}<li> <a href="{{ . }}"><i class="fa fa-facebook-square"></i> facebook</a></li>{{end}}
            {{ with .Site.Params.github }}<li> <a href="{{ . }}"><i class="fa fa-github-square"></i> github</a> </li>{{end}}
-           <div id="fork-me">
-           <a href="https://twitter.com/psilocene" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @psilocene</a>
-           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-           <iframe src="https://ghbtns.com/github-btn.html?user=psilocene&repo=psilocene&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
-           <iframe src="https://ghbtns.com/github-btn.html?user=psilocene&repo=psilocene&type=star&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+          <div id="twitter">
+            <a href="https://twitter.com/psilocene" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @psilocene</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+
+          <div id="fork-me">
+           <iframe class="ghb-btn" src="https://ghbtns.com/github-btn.html?user=psilocene&repo=psilocene&type=fork&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
+           <iframe class="ghb-btn" src="https://ghbtns.com/github-btn.html?user=psilocene&repo=psilocene&type=star&count=true&size=large" frameborder="0" scrolling="0" width="158px" height="30px"></iframe>
          </div>
          </div>
        </ul>
